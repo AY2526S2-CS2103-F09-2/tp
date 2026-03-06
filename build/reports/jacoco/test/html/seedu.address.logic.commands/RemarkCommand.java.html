@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RemarkCommand.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tp</a> &gt; <a href="index.source.html" class="el_package">seedu.address.logic.commands</a> &gt; <span class="el_source">RemarkCommand.java</span></div><h1>RemarkCommand.java</h1><pre class="source lang-java linenums">package seedu.address.logic.commands;
+
+import static java.util.Objects.requireNonNull;
+
+import java.util.List;
+
+import seedu.address.commons.core.index.Index;
+import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.logic.Messages;
+import seedu.address.logic.commands.exceptions.CommandException;
+import seedu.address.model.Model;
+import seedu.address.model.person.Person;
+import seedu.address.model.person.Remark;
+
+/**
+ * Adds a remark to an existing person in the address book.
+ */
+public class RemarkCommand extends Command {
+
+    public static final String COMMAND_WORD = &quot;remark&quot;;
+
+    public static final String MESSAGE_USAGE = COMMAND_WORD
+            + &quot;: Adds a remark to the person identified by the index number used in the displayed person list.\n&quot;
+            + &quot;Parameters: INDEX (must be a positive integer) &quot;
+            + &quot;r/[REMARK]\n&quot;
+            + &quot;Example: &quot; + COMMAND_WORD + &quot; 1 &quot;
+            + &quot;r/Likes to drink coffee.&quot;;
+
+    public static final String MESSAGE_ADD_REMARK_SUCCESS = &quot;Added remark to Person: %1$s&quot;;
+
+    private final Index index;
+    private final Remark remark;
+
+    /**
+     * Creates a RemarkCommand to add the specified {@code Remark} to the person at {@code Index}.
+     */
+<span class="nc" id="L37">    public RemarkCommand(Index index, Remark remark) {</span>
+<span class="nc" id="L38">        requireNonNull(index);</span>
+<span class="nc" id="L39">        requireNonNull(remark);</span>
+<span class="nc" id="L40">        this.index = index;</span>
+<span class="nc" id="L41">        this.remark = remark;</span>
+<span class="nc" id="L42">    }</span>
+
+    @Override
+    public CommandResult execute(Model model) throws CommandException {
+<span class="nc" id="L46">        requireNonNull(model);</span>
+<span class="nc" id="L47">        List&lt;Person&gt; lastShownList = model.getFilteredPersonList();</span>
+
+<span class="nc bnc" id="L49" title="All 2 branches missed.">        if (index.getZeroBased() &gt;= lastShownList.size()) {</span>
+<span class="nc" id="L50">            throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);</span>
+        }
+
+<span class="nc" id="L53">        Person personToEdit = lastShownList.get(index.getZeroBased());</span>
+<span class="nc" id="L54">        Person editedPerson = new Person(personToEdit.getName(), personToEdit.getPhone(), personToEdit.getEmail(),</span>
+<span class="nc" id="L55">                personToEdit.getAddress(), personToEdit.getTags(), remark);</span>
+
+<span class="nc" id="L57">        model.setPerson(personToEdit, editedPerson);</span>
+<span class="nc" id="L58">        return new CommandResult(String.format(MESSAGE_ADD_REMARK_SUCCESS, Messages.format(editedPerson)));</span>
+    }
+
+    @Override
+    public boolean equals(Object other) {
+<span class="nc bnc" id="L63" title="All 2 branches missed.">        if (other == this) {</span>
+<span class="nc" id="L64">            return true;</span>
+        }
+
+<span class="nc bnc" id="L67" title="All 2 branches missed.">        if (!(other instanceof RemarkCommand)) {</span>
+<span class="nc" id="L68">            return false;</span>
+        }
+
+<span class="nc" id="L71">        RemarkCommand otherRemarkCommand = (RemarkCommand) other;</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">        return index.equals(otherRemarkCommand.index)</span>
+<span class="nc bnc" id="L73" title="All 2 branches missed.">                &amp;&amp; remark.equals(otherRemarkCommand.remark);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L78">        return new ToStringBuilder(this)</span>
+<span class="nc" id="L79">                .add(&quot;index&quot;, index)</span>
+<span class="nc" id="L80">                .add(&quot;remark&quot;, remark)</span>
+<span class="nc" id="L81">                .toString();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

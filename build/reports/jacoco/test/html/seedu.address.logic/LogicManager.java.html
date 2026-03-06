@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LogicManager.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tp</a> &gt; <a href="index.source.html" class="el_package">seedu.address.logic</a> &gt; <span class="el_source">LogicManager.java</span></div><h1>LogicManager.java</h1><pre class="source lang-java linenums">package seedu.address.logic;
+
+import java.io.IOException;
+import java.nio.file.AccessDeniedException;
+import java.nio.file.Path;
+import java.util.logging.Logger;
+
+import javafx.collections.ObservableList;
+import seedu.address.commons.core.GuiSettings;
+import seedu.address.commons.core.LogsCenter;
+import seedu.address.logic.commands.Command;
+import seedu.address.logic.commands.CommandResult;
+import seedu.address.logic.commands.exceptions.CommandException;
+import seedu.address.logic.parser.AddressBookParser;
+import seedu.address.logic.parser.exceptions.ParseException;
+import seedu.address.model.Model;
+import seedu.address.model.ReadOnlyAddressBook;
+import seedu.address.model.person.Person;
+import seedu.address.storage.Storage;
+
+/**
+ * The main LogicManager of the app.
+ */
+public class LogicManager implements Logic {
+    public static final String FILE_OPS_ERROR_FORMAT = &quot;Could not save data due to the following error: %s&quot;;
+
+    public static final String FILE_OPS_PERMISSION_ERROR_FORMAT =
+            &quot;Could not save data to file %s due to insufficient permissions to write to the file or the folder.&quot;;
+
+<span class="fc" id="L30">    private final Logger logger = LogsCenter.getLogger(LogicManager.class);</span>
+
+    private final Model model;
+    private final Storage storage;
+    private final AddressBookParser addressBookParser;
+
+    /**
+     * Constructs a {@code LogicManager} with the given {@code Model} and {@code Storage}.
+     */
+<span class="fc" id="L39">    public LogicManager(Model model, Storage storage) {</span>
+<span class="fc" id="L40">        this.model = model;</span>
+<span class="fc" id="L41">        this.storage = storage;</span>
+<span class="fc" id="L42">        addressBookParser = new AddressBookParser();</span>
+<span class="fc" id="L43">    }</span>
+
+    @Override
+    public CommandResult execute(String commandText) throws CommandException, ParseException {
+<span class="fc" id="L47">        logger.info(&quot;----------------[USER COMMAND][&quot; + commandText + &quot;]&quot;);</span>
+
+        CommandResult commandResult;
+<span class="fc" id="L50">        Command command = addressBookParser.parseCommand(commandText);</span>
+<span class="fc" id="L51">        commandResult = command.execute(model);</span>
+
+        try {
+<span class="fc" id="L54">            storage.saveAddressBook(model.getAddressBook());</span>
+<span class="fc" id="L55">        } catch (AccessDeniedException e) {</span>
+<span class="fc" id="L56">            throw new CommandException(String.format(FILE_OPS_PERMISSION_ERROR_FORMAT, e.getMessage()), e);</span>
+<span class="fc" id="L57">        } catch (IOException ioe) {</span>
+<span class="fc" id="L58">            throw new CommandException(String.format(FILE_OPS_ERROR_FORMAT, ioe.getMessage()), ioe);</span>
+<span class="fc" id="L59">        }</span>
+
+<span class="fc" id="L61">        return commandResult;</span>
+    }
+
+    @Override
+    public ReadOnlyAddressBook getAddressBook() {
+<span class="nc" id="L66">        return model.getAddressBook();</span>
+    }
+
+    @Override
+    public ObservableList&lt;Person&gt; getFilteredPersonList() {
+<span class="fc" id="L71">        return model.getFilteredPersonList();</span>
+    }
+
+    @Override
+    public Path getAddressBookFilePath() {
+<span class="nc" id="L76">        return model.getAddressBookFilePath();</span>
+    }
+
+    @Override
+    public GuiSettings getGuiSettings() {
+<span class="nc" id="L81">        return model.getGuiSettings();</span>
+    }
+
+    @Override
+    public void setGuiSettings(GuiSettings guiSettings) {
+<span class="nc" id="L86">        model.setGuiSettings(guiSettings);</span>
+<span class="nc" id="L87">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

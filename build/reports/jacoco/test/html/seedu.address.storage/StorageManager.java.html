@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StorageManager.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tp</a> &gt; <a href="index.source.html" class="el_package">seedu.address.storage</a> &gt; <span class="el_source">StorageManager.java</span></div><h1>StorageManager.java</h1><pre class="source lang-java linenums">package seedu.address.storage;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.Optional;
+import java.util.logging.Logger;
+
+import seedu.address.commons.core.LogsCenter;
+import seedu.address.commons.exceptions.DataLoadingException;
+import seedu.address.model.ReadOnlyAddressBook;
+import seedu.address.model.ReadOnlyUserPrefs;
+import seedu.address.model.UserPrefs;
+
+/**
+ * Manages storage of AddressBook data in local storage.
+ */
+public class StorageManager implements Storage {
+
+<span class="fc" id="L19">    private static final Logger logger = LogsCenter.getLogger(StorageManager.class);</span>
+    private AddressBookStorage addressBookStorage;
+    private UserPrefsStorage userPrefsStorage;
+
+    /**
+     * Creates a {@code StorageManager} with the given {@code AddressBookStorage} and {@code UserPrefStorage}.
+     */
+<span class="fc" id="L26">    public StorageManager(AddressBookStorage addressBookStorage, UserPrefsStorage userPrefsStorage) {</span>
+<span class="fc" id="L27">        this.addressBookStorage = addressBookStorage;</span>
+<span class="fc" id="L28">        this.userPrefsStorage = userPrefsStorage;</span>
+<span class="fc" id="L29">    }</span>
+
+    // ================ UserPrefs methods ==============================
+
+    @Override
+    public Path getUserPrefsFilePath() {
+<span class="nc" id="L35">        return userPrefsStorage.getUserPrefsFilePath();</span>
+    }
+
+    @Override
+    public Optional&lt;UserPrefs&gt; readUserPrefs() throws DataLoadingException {
+<span class="fc" id="L40">        return userPrefsStorage.readUserPrefs();</span>
+    }
+
+    @Override
+    public void saveUserPrefs(ReadOnlyUserPrefs userPrefs) throws IOException {
+<span class="fc" id="L45">        userPrefsStorage.saveUserPrefs(userPrefs);</span>
+<span class="fc" id="L46">    }</span>
+
+
+    // ================ AddressBook methods ==============================
+
+    @Override
+    public Path getAddressBookFilePath() {
+<span class="fc" id="L53">        return addressBookStorage.getAddressBookFilePath();</span>
+    }
+
+    @Override
+    public Optional&lt;ReadOnlyAddressBook&gt; readAddressBook() throws DataLoadingException {
+<span class="fc" id="L58">        return readAddressBook(addressBookStorage.getAddressBookFilePath());</span>
+    }
+
+    @Override
+    public Optional&lt;ReadOnlyAddressBook&gt; readAddressBook(Path filePath) throws DataLoadingException {
+<span class="fc" id="L63">        logger.fine(&quot;Attempting to read data from file: &quot; + filePath);</span>
+<span class="fc" id="L64">        return addressBookStorage.readAddressBook(filePath);</span>
+    }
+
+    @Override
+    public void saveAddressBook(ReadOnlyAddressBook addressBook) throws IOException {
+<span class="fc" id="L69">        saveAddressBook(addressBook, addressBookStorage.getAddressBookFilePath());</span>
+<span class="fc" id="L70">    }</span>
+
+    @Override
+    public void saveAddressBook(ReadOnlyAddressBook addressBook, Path filePath) throws IOException {
+<span class="fc" id="L74">        logger.fine(&quot;Attempting to write to data file: &quot; + filePath);</span>
+<span class="fc" id="L75">        addressBookStorage.saveAddressBook(addressBook, filePath);</span>
+<span class="fc" id="L76">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

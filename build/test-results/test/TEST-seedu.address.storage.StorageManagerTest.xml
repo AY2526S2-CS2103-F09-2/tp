@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="seedu.address.storage.StorageManagerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-03-06T04:33:27" hostname="Ricks-MacBook-Pro-2.local" time="0.003">
+  <properties/>
+  <testcase name="addressBookReadSave()" classname="seedu.address.storage.StorageManagerTest" time="0.002"/>
+  <testcase name="prefsReadSave()" classname="seedu.address.storage.StorageManagerTest" time="0.001"/>
+  <testcase name="getAddressBookFilePath()" classname="seedu.address.storage.StorageManagerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit15639335193647187154/ab found.
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit10102173697765878514/prefs found.
+]]></system-err>
+</testsuite>

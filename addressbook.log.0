@@ -1,0 +1,514 @@
+Mar 06, 2026 11:53:12 AM seedu.address.Main main
+WARNING: The warning about Unsupported JavaFX configuration below (if any) can be ignored.
+Mar 06, 2026 11:53:28 AM seedu.address.Main main
+WARNING: The warning about Unsupported JavaFX configuration below (if any) can be ignored.
+Mar 06, 2026 11:53:28 AM seedu.address.MainApp init
+INFO: =============================[ Initializing AddressBook ]===========================
+Mar 06, 2026 11:53:28 AM seedu.address.MainApp initConfig
+INFO: Using config file : config.json
+Mar 06, 2026 11:53:28 AM seedu.address.MainApp initConfig
+INFO: Creating new config file config.json
+Mar 06, 2026 11:53:28 AM seedu.address.commons.core.LogsCenter init
+INFO: Log level will be set as: INFO
+Mar 06, 2026 11:53:28 AM seedu.address.MainApp initPrefs
+INFO: Using preference file : preferences.json
+Mar 06, 2026 11:53:28 AM seedu.address.MainApp initPrefs
+INFO: Creating new preference file preferences.json
+Mar 06, 2026 11:53:28 AM seedu.address.MainApp initModelManager
+INFO: Using data file : data/addressbook.json
+Mar 06, 2026 11:53:28 AM seedu.address.MainApp initModelManager
+INFO: Creating a new data file data/addressbook.json populated with a sample AddressBook.
+Mar 06, 2026 11:53:28 AM seedu.address.MainApp start
+INFO: Starting AddressBook V0.2.2ea
+Mar 06, 2026 11:53:28 AM seedu.address.ui.UiManager start
+INFO: Starting UI...
+Mar 06, 2026 11:53:31 AM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][list]
+Mar 06, 2026 11:53:31 AM seedu.address.ui.MainWindow executeCommand
+INFO: Result: Listed all persons
+Mar 06, 2026 11:53:33 AM seedu.address.MainApp stop
+INFO: ============================ [ Stopping AddressBook ] =============================
+Mar 06, 2026 11:53:49 AM seedu.address.Main main
+WARNING: The warning about Unsupported JavaFX configuration below (if any) can be ignored.
+Mar 06, 2026 11:56:05 AM seedu.address.Main main
+WARNING: The warning about Unsupported JavaFX configuration below (if any) can be ignored.
+Mar 06, 2026 12:02:00 PM seedu.address.Main main
+WARNING: The warning about Unsupported JavaFX configuration below (if any) can be ignored.
+Mar 06, 2026 12:02:00 PM seedu.address.Main main
+WARNING: The warning about Unsupported JavaFX configuration below (if any) can be ignored.
+Mar 06, 2026 12:02:02 PM seedu.address.Main main
+WARNING: The warning about Unsupported JavaFX configuration below (if any) can be ignored.
+Mar 06, 2026 12:03:35 PM seedu.address.Main main
+WARNING: The warning about Unsupported JavaFX configuration below (if any) can be ignored.
+Mar 06, 2026 12:03:35 PM seedu.address.MainApp init
+INFO: =============================[ Initializing AddressBook ]===========================
+Mar 06, 2026 12:03:35 PM seedu.address.MainApp initConfig
+INFO: Using config file : config.json
+Mar 06, 2026 12:03:35 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file config.json found.
+Mar 06, 2026 12:03:35 PM seedu.address.commons.core.LogsCenter init
+INFO: Log level will be set as: INFO
+Mar 06, 2026 12:03:35 PM seedu.address.MainApp initPrefs
+INFO: Using preference file : preferences.json
+Mar 06, 2026 12:03:35 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file preferences.json found.
+Mar 06, 2026 12:03:35 PM seedu.address.MainApp initModelManager
+INFO: Using data file : data/addressbook.json
+Mar 06, 2026 12:03:35 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file data/addressbook.json found.
+Mar 06, 2026 12:03:35 PM seedu.address.MainApp start
+INFO: Starting AddressBook V0.2.2ea
+Mar 06, 2026 12:03:35 PM seedu.address.ui.UiManager start
+INFO: Starting UI...
+Mar 06, 2026 12:03:39 PM seedu.address.MainApp stop
+INFO: ============================ [ Stopping AddressBook ] =============================
+Mar 06, 2026 12:07:40 PM seedu.address.Main main
+WARNING: The warning about Unsupported JavaFX configuration below (if any) can be ignored.
+Mar 06, 2026 12:08:45 PM seedu.address.Main main
+WARNING: The warning about Unsupported JavaFX configuration below (if any) can be ignored.
+Mar 06, 2026 12:08:45 PM seedu.address.MainApp init
+INFO: =============================[ Initializing AddressBook ]===========================
+Mar 06, 2026 12:08:45 PM seedu.address.MainApp initConfig
+INFO: Using config file : config.json
+Mar 06, 2026 12:08:46 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file config.json found.
+Mar 06, 2026 12:08:46 PM seedu.address.commons.core.LogsCenter init
+INFO: Log level will be set as: INFO
+Mar 06, 2026 12:08:46 PM seedu.address.MainApp initPrefs
+INFO: Using preference file : preferences.json
+Mar 06, 2026 12:08:46 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file preferences.json found.
+Mar 06, 2026 12:08:46 PM seedu.address.MainApp initModelManager
+INFO: Using data file : data/addressbook.json
+Mar 06, 2026 12:08:46 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file data/addressbook.json found.
+Mar 06, 2026 12:08:46 PM seedu.address.MainApp start
+INFO: Starting AddressBook V0.2.2ea
+Mar 06, 2026 12:08:46 PM seedu.address.ui.UiManager start
+INFO: Starting UI...
+Mar 06, 2026 12:08:48 PM seedu.address.MainApp stop
+INFO: ============================ [ Stopping AddressBook ] =============================
+Mar 06, 2026 12:08:50 PM seedu.address.Main main
+WARNING: The warning about Unsupported JavaFX configuration below (if any) can be ignored.
+Mar 06, 2026 12:09:09 PM seedu.address.Main main
+WARNING: The warning about Unsupported JavaFX configuration below (if any) can be ignored.
+Mar 06, 2026 12:09:48 PM seedu.address.Main main
+WARNING: The warning about Unsupported JavaFX configuration below (if any) can be ignored.
+Mar 06, 2026 12:09:48 PM seedu.address.MainApp init
+INFO: =============================[ Initializing AddressBook ]===========================
+Mar 06, 2026 12:09:48 PM seedu.address.MainApp initConfig
+INFO: Using config file : config.json
+Mar 06, 2026 12:09:48 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file config.json found.
+Mar 06, 2026 12:09:49 PM seedu.address.commons.core.LogsCenter init
+INFO: Log level will be set as: INFO
+Mar 06, 2026 12:09:49 PM seedu.address.MainApp initPrefs
+INFO: Using preference file : preferences.json
+Mar 06, 2026 12:09:49 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file preferences.json found.
+Mar 06, 2026 12:09:49 PM seedu.address.MainApp initModelManager
+INFO: Using data file : data/addressbook.json
+Mar 06, 2026 12:09:49 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file data/addressbook.json found.
+Mar 06, 2026 12:09:49 PM seedu.address.MainApp start
+INFO: Starting AddressBook V0.2.2ea
+Mar 06, 2026 12:09:49 PM seedu.address.ui.UiManager start
+INFO: Starting UI...
+Mar 06, 2026 12:09:56 PM seedu.address.MainApp stop
+INFO: ============================ [ Stopping AddressBook ] =============================
+Mar 06, 2026 12:10:29 PM seedu.address.Main main
+WARNING: The warning about Unsupported JavaFX configuration below (if any) can be ignored.
+Mar 06, 2026 12:10:29 PM seedu.address.MainApp init
+INFO: =============================[ Initializing AddressBook ]===========================
+Mar 06, 2026 12:10:29 PM seedu.address.MainApp initConfig
+INFO: Using config file : config.json
+Mar 06, 2026 12:10:29 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file config.json found.
+Mar 06, 2026 12:10:30 PM seedu.address.commons.core.LogsCenter init
+INFO: Log level will be set as: INFO
+Mar 06, 2026 12:10:30 PM seedu.address.MainApp initPrefs
+INFO: Using preference file : preferences.json
+Mar 06, 2026 12:10:30 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file preferences.json found.
+Mar 06, 2026 12:10:30 PM seedu.address.MainApp initModelManager
+INFO: Using data file : data/addressbook.json
+Mar 06, 2026 12:10:30 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file data/addressbook.json found.
+Mar 06, 2026 12:10:30 PM seedu.address.MainApp start
+INFO: Starting AddressBook V0.2.2ea
+Mar 06, 2026 12:10:30 PM seedu.address.ui.UiManager start
+INFO: Starting UI...
+Mar 06, 2026 12:12:13 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][edut 1 n/Alice Yeoh]
+Mar 06, 2026 12:12:45 PM seedu.address.Main main
+WARNING: The warning about Unsupported JavaFX configuration below (if any) can be ignored.
+Mar 06, 2026 12:12:46 PM seedu.address.MainApp init
+INFO: =============================[ Initializing AddressBook ]===========================
+Mar 06, 2026 12:12:46 PM seedu.address.MainApp initConfig
+INFO: Using config file : config.json
+Mar 06, 2026 12:12:46 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file config.json found.
+Mar 06, 2026 12:12:46 PM seedu.address.commons.core.LogsCenter init
+INFO: Log level will be set as: INFO
+Mar 06, 2026 12:12:46 PM seedu.address.MainApp initPrefs
+INFO: Using preference file : preferences.json
+Mar 06, 2026 12:12:46 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file preferences.json found.
+Mar 06, 2026 12:12:46 PM seedu.address.MainApp initModelManager
+INFO: Using data file : data/addressbook.json
+Mar 06, 2026 12:12:46 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file data/addressbook.json found.
+Mar 06, 2026 12:12:46 PM seedu.address.MainApp start
+INFO: Starting AddressBook V0.2.2ea
+Mar 06, 2026 12:12:46 PM seedu.address.ui.UiManager start
+INFO: Starting UI...
+Mar 06, 2026 12:13:24 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][edit 1 n/Alice Yeoho]
+Mar 06, 2026 12:15:21 PM seedu.address.Main main
+WARNING: The warning about Unsupported JavaFX configuration below (if any) can be ignored.
+Mar 06, 2026 12:15:21 PM seedu.address.MainApp init
+INFO: =============================[ Initializing AddressBook ]===========================
+Mar 06, 2026 12:15:21 PM seedu.address.MainApp initConfig
+INFO: Using config file : config.json
+Mar 06, 2026 12:15:21 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file config.json found.
+Mar 06, 2026 12:15:21 PM seedu.address.commons.core.LogsCenter init
+INFO: Log level will be set as: INFO
+Mar 06, 2026 12:15:21 PM seedu.address.MainApp initPrefs
+INFO: Using preference file : preferences.json
+Mar 06, 2026 12:15:21 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file preferences.json found.
+Mar 06, 2026 12:15:21 PM seedu.address.MainApp initModelManager
+INFO: Using data file : data/addressbook.json
+Mar 06, 2026 12:15:21 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file data/addressbook.json found.
+Mar 06, 2026 12:15:22 PM seedu.address.MainApp start
+INFO: Starting AddressBook V0.2.2ea
+Mar 06, 2026 12:15:22 PM seedu.address.ui.UiManager start
+INFO: Starting UI...
+Mar 06, 2026 12:15:33 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][edit 1 n/Alice Yeoh]
+Mar 06, 2026 12:15:53 PM seedu.address.ui.MainWindow executeCommand
+INFO: Result: Edited Person: Alice Yeoh; Phone: 87438807; Email: alexyeoh@example.com; Address: Blk 30 Geylang Street 29, #06-40; Tags: [friends]
+Mar 06, 2026 12:16:06 PM seedu.address.Main main
+WARNING: The warning about Unsupported JavaFX configuration below (if any) can be ignored.
+Mar 06, 2026 12:16:06 PM seedu.address.MainApp init
+INFO: =============================[ Initializing AddressBook ]===========================
+Mar 06, 2026 12:16:06 PM seedu.address.MainApp initConfig
+INFO: Using config file : config.json
+Mar 06, 2026 12:16:06 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file config.json found.
+Mar 06, 2026 12:16:06 PM seedu.address.commons.core.LogsCenter init
+INFO: Log level will be set as: INFO
+Mar 06, 2026 12:16:06 PM seedu.address.MainApp initPrefs
+INFO: Using preference file : preferences.json
+Mar 06, 2026 12:16:06 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file preferences.json found.
+Mar 06, 2026 12:16:06 PM seedu.address.MainApp initModelManager
+INFO: Using data file : data/addressbook.json
+Mar 06, 2026 12:16:06 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file data/addressbook.json found.
+Mar 06, 2026 12:16:06 PM seedu.address.MainApp start
+INFO: Starting AddressBook V0.2.2ea
+Mar 06, 2026 12:16:06 PM seedu.address.ui.UiManager start
+INFO: Starting UI...
+Mar 06, 2026 12:16:11 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][edit 1 n/Alice Yeoh]
+Mar 06, 2026 12:16:51 PM seedu.address.ui.MainWindow executeCommand
+INFO: Result: Edited Person: Alice Yeoh; Phone: 87438807; Email: alexyeoh@example.com; Address: Blk 30 Geylang Street 29, #06-40; Tags: [friends]
+Mar 06, 2026 12:28:30 PM seedu.address.AppParameters parse
+WARNING: Invalid config path a . Using default config path.
+Mar 06, 2026 12:28:30 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/EmptyConfig.json found.
+Mar 06, 2026 12:28:30 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/TypicalConfig.json found.
+Mar 06, 2026 12:28:30 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit6535925971036263353/TempConfig.json found.
+Mar 06, 2026 12:28:30 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit6535925971036263353/TempConfig.json found.
+Mar 06, 2026 12:28:30 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/ExtraValuesConfig.json found.
+Mar 06, 2026 12:28:30 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/NotJsonFormatConfig.json found.
+Mar 06, 2026 12:28:30 PM seedu.address.commons.util.JsonUtil readJsonFile
+WARNING: Error reading from jsonFile file src/test/data/ConfigUtilTest/NotJsonFormatConfig.json: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'this': was expecting 'null', 'true', 'false' or NaN
+ at [Source: this file is not in json format!
+; line: 1, column: 5]
+Mar 06, 2026 12:28:31 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][uicfhmowqewca]
+Mar 06, 2026 12:28:31 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][add n/Amy Bee p/11111111 e/amy@example.com a/Block 312, Amy Street 1]
+Mar 06, 2026 12:28:31 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][list]
+Mar 06, 2026 12:28:31 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][add n/Amy Bee p/11111111 e/amy@example.com a/Block 312, Amy Street 1]
+Mar 06, 2026 12:28:31 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][delete 9]
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonAddressBookStorageTest/invalidPersonAddressBook.json found.
+Mar 06, 2026 12:28:31 PM seedu.address.storage.JsonAddressBookStorage readAddressBook
+INFO: Illegal values found in src/test/data/JsonAddressBookStorageTest/invalidPersonAddressBook.json: Names should only contain alphanumeric characters and spaces, and it should not be blank
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonAddressBookStorageTest/invalidAndValidPersonAddressBook.json found.
+Mar 06, 2026 12:28:31 PM seedu.address.storage.JsonAddressBookStorage readAddressBook
+INFO: Illegal values found in src/test/data/JsonAddressBookStorageTest/invalidAndValidPersonAddressBook.json: Phone numbers should only contain numbers, and it should be at least 3 digits long
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit5209911456674697526/TempAddressBook.json found.
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit5209911456674697526/TempAddressBook.json found.
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit5209911456674697526/TempAddressBook.json found.
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonAddressBookStorageTest/notJsonFormatAddressBook.json found.
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+WARNING: Error reading from jsonFile file src/test/data/JsonAddressBookStorageTest/notJsonFormatAddressBook.json: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'not': was expecting 'null', 'true', 'false' or NaN
+ at [Source: not json format!
+; line: 1, column: 4]
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonSerializableAddressBookTest/invalidPersonAddressBook.json found.
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonSerializableAddressBookTest/typicalPersonsAddressBook.json found.
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonSerializableAddressBookTest/duplicatePersonAddressBook.json found.
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonUserPrefsStorageTest/TypicalUserPref.json found.
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonUserPrefsStorageTest/NotJsonFormatUserPrefs.json found.
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+WARNING: Error reading from jsonFile file src/test/data/JsonUserPrefsStorageTest/NotJsonFormatUserPrefs.json: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'Not': was expecting 'null', 'true', 'false' or NaN
+ at [Source: Not a json file!
+; line: 1, column: 4]
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonUserPrefsStorageTest/EmptyUserPrefs.json found.
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit5010177657220591203/TempPrefs.json found.
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit5010177657220591203/TempPrefs.json found.
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonUserPrefsStorageTest/ExtraValuesUserPref.json found.
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit10998256239232930103/ab found.
+Mar 06, 2026 12:28:31 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit2935701391301304221/prefs found.
+Mar 06, 2026 12:28:38 PM seedu.address.AppParameters parse
+WARNING: Invalid config path a . Using default config path.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/EmptyConfig.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/TypicalConfig.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit5368271708727222724/TempConfig.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit5368271708727222724/TempConfig.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/ExtraValuesConfig.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/NotJsonFormatConfig.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+WARNING: Error reading from jsonFile file src/test/data/ConfigUtilTest/NotJsonFormatConfig.json: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'this': was expecting 'null', 'true', 'false' or NaN
+ at [Source: this file is not in json format!
+; line: 1, column: 5]
+Mar 06, 2026 12:28:38 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][uicfhmowqewca]
+Mar 06, 2026 12:28:38 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][add n/Amy Bee p/11111111 e/amy@example.com a/Block 312, Amy Street 1]
+Mar 06, 2026 12:28:38 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][list]
+Mar 06, 2026 12:28:38 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][add n/Amy Bee p/11111111 e/amy@example.com a/Block 312, Amy Street 1]
+Mar 06, 2026 12:28:38 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][delete 9]
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonAddressBookStorageTest/invalidPersonAddressBook.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.storage.JsonAddressBookStorage readAddressBook
+INFO: Illegal values found in src/test/data/JsonAddressBookStorageTest/invalidPersonAddressBook.json: Names should only contain alphanumeric characters and spaces, and it should not be blank
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonAddressBookStorageTest/invalidAndValidPersonAddressBook.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.storage.JsonAddressBookStorage readAddressBook
+INFO: Illegal values found in src/test/data/JsonAddressBookStorageTest/invalidAndValidPersonAddressBook.json: Phone numbers should only contain numbers, and it should be at least 3 digits long
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit7512482398881463839/TempAddressBook.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit7512482398881463839/TempAddressBook.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit7512482398881463839/TempAddressBook.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonAddressBookStorageTest/notJsonFormatAddressBook.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+WARNING: Error reading from jsonFile file src/test/data/JsonAddressBookStorageTest/notJsonFormatAddressBook.json: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'not': was expecting 'null', 'true', 'false' or NaN
+ at [Source: not json format!
+; line: 1, column: 4]
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonSerializableAddressBookTest/invalidPersonAddressBook.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonSerializableAddressBookTest/typicalPersonsAddressBook.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonSerializableAddressBookTest/duplicatePersonAddressBook.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonUserPrefsStorageTest/TypicalUserPref.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonUserPrefsStorageTest/NotJsonFormatUserPrefs.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+WARNING: Error reading from jsonFile file src/test/data/JsonUserPrefsStorageTest/NotJsonFormatUserPrefs.json: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'Not': was expecting 'null', 'true', 'false' or NaN
+ at [Source: Not a json file!
+; line: 1, column: 4]
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonUserPrefsStorageTest/EmptyUserPrefs.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit1559100779346809294/TempPrefs.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit1559100779346809294/TempPrefs.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonUserPrefsStorageTest/ExtraValuesUserPref.json found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit12009683129005660258/ab found.
+Mar 06, 2026 12:28:38 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit7575592255615017416/prefs found.
+Mar 06, 2026 12:33:07 PM seedu.address.AppParameters parse
+WARNING: Invalid config path a . Using default config path.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/EmptyConfig.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/TypicalConfig.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit885353420175506962/TempConfig.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit885353420175506962/TempConfig.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/ExtraValuesConfig.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/NotJsonFormatConfig.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+WARNING: Error reading from jsonFile file src/test/data/ConfigUtilTest/NotJsonFormatConfig.json: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'this': was expecting 'null', 'true', 'false' or NaN
+ at [Source: this file is not in json format!
+; line: 1, column: 5]
+Mar 06, 2026 12:33:07 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][uicfhmowqewca]
+Mar 06, 2026 12:33:07 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][add n/Amy Bee p/11111111 e/amy@example.com a/Block 312, Amy Street 1]
+Mar 06, 2026 12:33:07 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][list]
+Mar 06, 2026 12:33:07 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][add n/Amy Bee p/11111111 e/amy@example.com a/Block 312, Amy Street 1]
+Mar 06, 2026 12:33:07 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][delete 9]
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonAddressBookStorageTest/invalidPersonAddressBook.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.storage.JsonAddressBookStorage readAddressBook
+INFO: Illegal values found in src/test/data/JsonAddressBookStorageTest/invalidPersonAddressBook.json: Names should only contain alphanumeric characters and spaces, and it should not be blank
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonAddressBookStorageTest/invalidAndValidPersonAddressBook.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.storage.JsonAddressBookStorage readAddressBook
+INFO: Illegal values found in src/test/data/JsonAddressBookStorageTest/invalidAndValidPersonAddressBook.json: Phone numbers should only contain numbers, and it should be at least 3 digits long
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit695708757980269269/TempAddressBook.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit695708757980269269/TempAddressBook.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit695708757980269269/TempAddressBook.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonAddressBookStorageTest/notJsonFormatAddressBook.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+WARNING: Error reading from jsonFile file src/test/data/JsonAddressBookStorageTest/notJsonFormatAddressBook.json: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'not': was expecting 'null', 'true', 'false' or NaN
+ at [Source: not json format!
+; line: 1, column: 4]
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonSerializableAddressBookTest/invalidPersonAddressBook.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonSerializableAddressBookTest/typicalPersonsAddressBook.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonSerializableAddressBookTest/duplicatePersonAddressBook.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonUserPrefsStorageTest/TypicalUserPref.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonUserPrefsStorageTest/NotJsonFormatUserPrefs.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+WARNING: Error reading from jsonFile file src/test/data/JsonUserPrefsStorageTest/NotJsonFormatUserPrefs.json: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'Not': was expecting 'null', 'true', 'false' or NaN
+ at [Source: Not a json file!
+; line: 1, column: 4]
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonUserPrefsStorageTest/EmptyUserPrefs.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit10146293487828149132/TempPrefs.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit10146293487828149132/TempPrefs.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonUserPrefsStorageTest/ExtraValuesUserPref.json found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit9025137432381336072/ab found.
+Mar 06, 2026 12:33:07 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit2798421828572312059/prefs found.
+Mar 06, 2026 12:33:26 PM seedu.address.AppParameters parse
+WARNING: Invalid config path a . Using default config path.
+Mar 06, 2026 12:33:26 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/EmptyConfig.json found.
+Mar 06, 2026 12:33:26 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/TypicalConfig.json found.
+Mar 06, 2026 12:33:26 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit6605354914011889262/TempConfig.json found.
+Mar 06, 2026 12:33:26 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit6605354914011889262/TempConfig.json found.
+Mar 06, 2026 12:33:26 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/ExtraValuesConfig.json found.
+Mar 06, 2026 12:33:26 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/NotJsonFormatConfig.json found.
+Mar 06, 2026 12:33:26 PM seedu.address.commons.util.JsonUtil readJsonFile
+WARNING: Error reading from jsonFile file src/test/data/ConfigUtilTest/NotJsonFormatConfig.json: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'this': was expecting 'null', 'true', 'false' or NaN
+ at [Source: this file is not in json format!
+; line: 1, column: 5]
+Mar 06, 2026 12:33:27 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][uicfhmowqewca]
+Mar 06, 2026 12:33:27 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][add n/Amy Bee p/11111111 e/amy@example.com a/Block 312, Amy Street 1]
+Mar 06, 2026 12:33:27 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][list]
+Mar 06, 2026 12:33:27 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][add n/Amy Bee p/11111111 e/amy@example.com a/Block 312, Amy Street 1]
+Mar 06, 2026 12:33:27 PM seedu.address.logic.LogicManager execute
+INFO: ----------------[USER COMMAND][delete 9]
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonAddressBookStorageTest/invalidPersonAddressBook.json found.
+Mar 06, 2026 12:33:27 PM seedu.address.storage.JsonAddressBookStorage readAddressBook
+INFO: Illegal values found in src/test/data/JsonAddressBookStorageTest/invalidPersonAddressBook.json: Names should only contain alphanumeric characters and spaces, and it should not be blank
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonAddressBookStorageTest/invalidAndValidPersonAddressBook.json found.
+Mar 06, 2026 12:33:27 PM seedu.address.storage.JsonAddressBookStorage readAddressBook
+INFO: Illegal values found in src/test/data/JsonAddressBookStorageTest/invalidAndValidPersonAddressBook.json: Phone numbers should only contain numbers, and it should be at least 3 digits long
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit16662830645322655691/TempAddressBook.json found.
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit16662830645322655691/TempAddressBook.json found.
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit16662830645322655691/TempAddressBook.json found.
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonAddressBookStorageTest/notJsonFormatAddressBook.json found.
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+WARNING: Error reading from jsonFile file src/test/data/JsonAddressBookStorageTest/notJsonFormatAddressBook.json: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'not': was expecting 'null', 'true', 'false' or NaN
+ at [Source: not json format!
+; line: 1, column: 4]
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonSerializableAddressBookTest/invalidPersonAddressBook.json found.
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonSerializableAddressBookTest/typicalPersonsAddressBook.json found.
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonSerializableAddressBookTest/duplicatePersonAddressBook.json found.
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonUserPrefsStorageTest/TypicalUserPref.json found.
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonUserPrefsStorageTest/NotJsonFormatUserPrefs.json found.
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+WARNING: Error reading from jsonFile file src/test/data/JsonUserPrefsStorageTest/NotJsonFormatUserPrefs.json: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'Not': was expecting 'null', 'true', 'false' or NaN
+ at [Source: Not a json file!
+; line: 1, column: 4]
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonUserPrefsStorageTest/EmptyUserPrefs.json found.
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit11339468381313182617/TempPrefs.json found.
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit11339468381313182617/TempPrefs.json found.
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/JsonUserPrefsStorageTest/ExtraValuesUserPref.json found.
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit15639335193647187154/ab found.
+Mar 06, 2026 12:33:27 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit10102173697765878514/prefs found.

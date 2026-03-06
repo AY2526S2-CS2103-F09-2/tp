@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MainApp.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tp</a> &gt; <a href="index.source.html" class="el_package">seedu.address</a> &gt; <span class="el_source">MainApp.java</span></div><h1>MainApp.java</h1><pre class="source lang-java linenums">package seedu.address;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.Optional;
+import java.util.logging.Logger;
+
+import javafx.application.Application;
+import javafx.stage.Stage;
+import seedu.address.commons.core.Config;
+import seedu.address.commons.core.LogsCenter;
+import seedu.address.commons.core.Version;
+import seedu.address.commons.exceptions.DataLoadingException;
+import seedu.address.commons.util.ConfigUtil;
+import seedu.address.commons.util.StringUtil;
+import seedu.address.logic.Logic;
+import seedu.address.logic.LogicManager;
+import seedu.address.model.AddressBook;
+import seedu.address.model.Model;
+import seedu.address.model.ModelManager;
+import seedu.address.model.ReadOnlyAddressBook;
+import seedu.address.model.ReadOnlyUserPrefs;
+import seedu.address.model.UserPrefs;
+import seedu.address.model.util.SampleDataUtil;
+import seedu.address.storage.AddressBookStorage;
+import seedu.address.storage.JsonAddressBookStorage;
+import seedu.address.storage.JsonUserPrefsStorage;
+import seedu.address.storage.Storage;
+import seedu.address.storage.StorageManager;
+import seedu.address.storage.UserPrefsStorage;
+import seedu.address.ui.Ui;
+import seedu.address.ui.UiManager;
+
+/**
+ * Runs the application.
+ */
+<span class="nc" id="L37">public class MainApp extends Application {</span>
+
+<span class="nc" id="L39">    public static final Version VERSION = new Version(0, 2, 2, true);</span>
+
+<span class="nc" id="L41">    private static final Logger logger = LogsCenter.getLogger(MainApp.class);</span>
+
+    protected Ui ui;
+    protected Logic logic;
+    protected Storage storage;
+    protected Model model;
+    protected Config config;
+
+    @Override
+    public void init() throws Exception {
+<span class="nc" id="L51">        logger.info(&quot;=============================[ Initializing AddressBook ]===========================&quot;);</span>
+<span class="nc" id="L52">        super.init();</span>
+
+<span class="nc" id="L54">        AppParameters appParameters = AppParameters.parse(getParameters());</span>
+<span class="nc" id="L55">        config = initConfig(appParameters.getConfigPath());</span>
+<span class="nc" id="L56">        initLogging(config);</span>
+
+<span class="nc" id="L58">        UserPrefsStorage userPrefsStorage = new JsonUserPrefsStorage(config.getUserPrefsFilePath());</span>
+<span class="nc" id="L59">        UserPrefs userPrefs = initPrefs(userPrefsStorage);</span>
+<span class="nc" id="L60">        AddressBookStorage addressBookStorage = new JsonAddressBookStorage(userPrefs.getAddressBookFilePath());</span>
+<span class="nc" id="L61">        storage = new StorageManager(addressBookStorage, userPrefsStorage);</span>
+
+<span class="nc" id="L63">        model = initModelManager(storage, userPrefs);</span>
+
+<span class="nc" id="L65">        logic = new LogicManager(model, storage);</span>
+
+<span class="nc" id="L67">        ui = new UiManager(logic);</span>
+<span class="nc" id="L68">    }</span>
+
+    /**
+     * Returns a {@code ModelManager} with the data from {@code storage}'s address book and {@code userPrefs}. &lt;br&gt;
+     * The data from the sample address book will be used instead if {@code storage}'s address book is not found,
+     * or an empty address book will be used instead if errors occur when reading {@code storage}'s address book.
+     */
+    private Model initModelManager(Storage storage, ReadOnlyUserPrefs userPrefs) {
+<span class="nc" id="L76">        logger.info(&quot;Using data file : &quot; + storage.getAddressBookFilePath());</span>
+
+        Optional&lt;ReadOnlyAddressBook&gt; addressBookOptional;
+        ReadOnlyAddressBook initialData;
+        try {
+<span class="nc" id="L81">            addressBookOptional = storage.readAddressBook();</span>
+<span class="nc bnc" id="L82" title="All 2 branches missed.">            if (!addressBookOptional.isPresent()) {</span>
+<span class="nc" id="L83">                logger.info(&quot;Creating a new data file &quot; + storage.getAddressBookFilePath()</span>
+                        + &quot; populated with a sample AddressBook.&quot;);
+            }
+<span class="nc" id="L86">            initialData = addressBookOptional.orElseGet(SampleDataUtil::getSampleAddressBook);</span>
+<span class="nc" id="L87">        } catch (DataLoadingException e) {</span>
+<span class="nc" id="L88">            logger.warning(&quot;Data file at &quot; + storage.getAddressBookFilePath() + &quot; could not be loaded.&quot;</span>
+                    + &quot; Will be starting with an empty AddressBook.&quot;);
+<span class="nc" id="L90">            initialData = new AddressBook();</span>
+<span class="nc" id="L91">        }</span>
+
+<span class="nc" id="L93">        return new ModelManager(initialData, userPrefs);</span>
+    }
+
+    private void initLogging(Config config) {
+<span class="nc" id="L97">        LogsCenter.init(config);</span>
+<span class="nc" id="L98">    }</span>
+
+    /**
+     * Returns a {@code Config} using the file at {@code configFilePath}. &lt;br&gt;
+     * The default file path {@code Config#DEFAULT_CONFIG_FILE} will be used instead
+     * if {@code configFilePath} is null.
+     */
+    protected Config initConfig(Path configFilePath) {
+        Config initializedConfig;
+        Path configFilePathUsed;
+
+<span class="nc" id="L109">        configFilePathUsed = Config.DEFAULT_CONFIG_FILE;</span>
+
+<span class="nc bnc" id="L111" title="All 2 branches missed.">        if (configFilePath != null) {</span>
+<span class="nc" id="L112">            logger.info(&quot;Custom Config file specified &quot; + configFilePath);</span>
+<span class="nc" id="L113">            configFilePathUsed = configFilePath;</span>
+        }
+
+<span class="nc" id="L116">        logger.info(&quot;Using config file : &quot; + configFilePathUsed);</span>
+
+        try {
+<span class="nc" id="L119">            Optional&lt;Config&gt; configOptional = ConfigUtil.readConfig(configFilePathUsed);</span>
+<span class="nc bnc" id="L120" title="All 2 branches missed.">            if (!configOptional.isPresent()) {</span>
+<span class="nc" id="L121">                logger.info(&quot;Creating new config file &quot; + configFilePathUsed);</span>
+            }
+<span class="nc" id="L123">            initializedConfig = configOptional.orElse(new Config());</span>
+<span class="nc" id="L124">        } catch (DataLoadingException e) {</span>
+<span class="nc" id="L125">            logger.warning(&quot;Config file at &quot; + configFilePathUsed + &quot; could not be loaded.&quot;</span>
+                    + &quot; Using default config properties.&quot;);
+<span class="nc" id="L127">            initializedConfig = new Config();</span>
+<span class="nc" id="L128">        }</span>
+
+        //Update config file in case it was missing to begin with or there are new/unused fields
+        try {
+<span class="nc" id="L132">            ConfigUtil.saveConfig(initializedConfig, configFilePathUsed);</span>
+<span class="nc" id="L133">        } catch (IOException e) {</span>
+<span class="nc" id="L134">            logger.warning(&quot;Failed to save config file : &quot; + StringUtil.getDetails(e));</span>
+<span class="nc" id="L135">        }</span>
+<span class="nc" id="L136">        return initializedConfig;</span>
+    }
+
+    /**
+     * Returns a {@code UserPrefs} using the file at {@code storage}'s user prefs file path,
+     * or a new {@code UserPrefs} with default configuration if errors occur when
+     * reading from the file.
+     */
+    protected UserPrefs initPrefs(UserPrefsStorage storage) {
+<span class="nc" id="L145">        Path prefsFilePath = storage.getUserPrefsFilePath();</span>
+<span class="nc" id="L146">        logger.info(&quot;Using preference file : &quot; + prefsFilePath);</span>
+
+        UserPrefs initializedPrefs;
+        try {
+<span class="nc" id="L150">            Optional&lt;UserPrefs&gt; prefsOptional = storage.readUserPrefs();</span>
+<span class="nc bnc" id="L151" title="All 2 branches missed.">            if (!prefsOptional.isPresent()) {</span>
+<span class="nc" id="L152">                logger.info(&quot;Creating new preference file &quot; + prefsFilePath);</span>
+            }
+<span class="nc" id="L154">            initializedPrefs = prefsOptional.orElse(new UserPrefs());</span>
+<span class="nc" id="L155">        } catch (DataLoadingException e) {</span>
+<span class="nc" id="L156">            logger.warning(&quot;Preference file at &quot; + prefsFilePath + &quot; could not be loaded.&quot;</span>
+                    + &quot; Using default preferences.&quot;);
+<span class="nc" id="L158">            initializedPrefs = new UserPrefs();</span>
+<span class="nc" id="L159">        }</span>
+
+        //Update prefs file in case it was missing to begin with or there are new/unused fields
+        try {
+<span class="nc" id="L163">            storage.saveUserPrefs(initializedPrefs);</span>
+<span class="nc" id="L164">        } catch (IOException e) {</span>
+<span class="nc" id="L165">            logger.warning(&quot;Failed to save config file : &quot; + StringUtil.getDetails(e));</span>
+<span class="nc" id="L166">        }</span>
+
+<span class="nc" id="L168">        return initializedPrefs;</span>
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+<span class="nc" id="L173">        logger.info(&quot;Starting AddressBook &quot; + MainApp.VERSION);</span>
+<span class="nc" id="L174">        ui.start(primaryStage);</span>
+<span class="nc" id="L175">    }</span>
+
+    @Override
+    public void stop() {
+<span class="nc" id="L179">        logger.info(&quot;============================ [ Stopping AddressBook ] =============================&quot;);</span>
+        try {
+<span class="nc" id="L181">            storage.saveUserPrefs(model.getUserPrefs());</span>
+<span class="nc" id="L182">        } catch (IOException e) {</span>
+<span class="nc" id="L183">            logger.severe(&quot;Failed to save preferences &quot; + StringUtil.getDetails(e));</span>
+<span class="nc" id="L184">        }</span>
+<span class="nc" id="L185">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Remark.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tp</a> &gt; <a href="index.source.html" class="el_package">seedu.address.model.person</a> &gt; <span class="el_source">Remark.java</span></div><h1>Remark.java</h1><pre class="source lang-java linenums">package seedu.address.model.person;
+
+import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.AppUtil.checkArgument;
+
+/**
+ * Represents a Person's remark in the address book.
+ * Guarantees: immutable; is valid as declared in {@link #isValidRemark(String)}
+ */
+public class Remark {
+
+    public static final String MESSAGE_CONSTRAINTS = &quot;Remarks can take any values.&quot;;
+    public static final String VALIDATION_REGEX = &quot;[\\p{Print}]*&quot;;
+
+    public final String value;
+
+    /**
+     * Constructs a {@code Remark}.
+     *
+     * @param remark A valid remark.
+     */
+<span class="fc" id="L22">    public Remark(String remark) {</span>
+<span class="fc" id="L23">        requireNonNull(remark);</span>
+<span class="fc" id="L24">        checkArgument(isValidRemark(remark), MESSAGE_CONSTRAINTS);</span>
+<span class="fc" id="L25">        value = remark;</span>
+<span class="fc" id="L26">    }</span>
+
+    /**
+     * Returns true if a given string is a valid remark.
+     */
+    public static boolean isValidRemark(String test) {
+<span class="fc" id="L32">        return test.matches(VALIDATION_REGEX);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L37">        return value;</span>
+    }
+
+    @Override
+    public boolean equals(Object other) {
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        if (other == this) {</span>
+<span class="fc" id="L43">            return true;</span>
+        }
+
+<span class="pc bpc" id="L46" title="1 of 2 branches missed.">        if (!(other instanceof Remark)) {</span>
+<span class="nc" id="L47">            return false;</span>
+        }
+
+<span class="fc" id="L50">        Remark otherRemark = (Remark) other;</span>
+<span class="fc" id="L51">        return value.equals(otherRemark.value);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L56">        return value.hashCode();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

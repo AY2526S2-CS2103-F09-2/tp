@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="seedu.address.commons.util.ConfigUtilTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-03-06T04:33:26" hostname="Ricks-MacBook-Pro-2.local" time="0.191">
+  <properties/>
+  <testcase name="read_missingFile_emptyResult()" classname="seedu.address.commons.util.ConfigUtilTest" time="0.146"/>
+  <testcase name="read_valuesMissingFromFile_defaultValuesUsed()" classname="seedu.address.commons.util.ConfigUtilTest" time="0.028"/>
+  <testcase name="read_null_throwsNullPointerException()" classname="seedu.address.commons.util.ConfigUtilTest" time="0.0"/>
+  <testcase name="read_fileInOrder_successfullyRead()" classname="seedu.address.commons.util.ConfigUtilTest" time="0.002"/>
+  <testcase name="saveConfig_allInOrder_success()" classname="seedu.address.commons.util.ConfigUtilTest" time="0.011"/>
+  <testcase name="read_extraValuesInFile_extraValuesIgnored()" classname="seedu.address.commons.util.ConfigUtilTest" time="0.001"/>
+  <testcase name="save_nullConfig_throwsNullPointerException()" classname="seedu.address.commons.util.ConfigUtilTest" time="0.0"/>
+  <testcase name="read_notJsonFormat_exceptionThrown()" classname="seedu.address.commons.util.ConfigUtilTest" time="0.001"/>
+  <testcase name="save_nullFile_throwsNullPointerException()" classname="seedu.address.commons.util.ConfigUtilTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Mar 06, 2026 12:33:26 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/EmptyConfig.json found.
+Mar 06, 2026 12:33:26 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/TypicalConfig.json found.
+Mar 06, 2026 12:33:26 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit6605354914011889262/TempConfig.json found.
+Mar 06, 2026 12:33:26 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file /var/folders/w3/0p0n3c6x5g5g4h7cl77cwt8h0000gn/T/junit6605354914011889262/TempConfig.json found.
+Mar 06, 2026 12:33:26 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/ExtraValuesConfig.json found.
+Mar 06, 2026 12:33:26 PM seedu.address.commons.util.JsonUtil readJsonFile
+INFO: JSON file src/test/data/ConfigUtilTest/NotJsonFormatConfig.json found.
+Mar 06, 2026 12:33:26 PM seedu.address.commons.util.JsonUtil readJsonFile
+WARNING: Error reading from jsonFile file src/test/data/ConfigUtilTest/NotJsonFormatConfig.json: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'this': was expecting 'null', 'true', 'false' or NaN
+ at [Source: this file is not in json format!
+; line: 1, column: 5]
+]]></system-err>
+</testsuite>
