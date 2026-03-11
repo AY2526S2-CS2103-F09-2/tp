@@ -25,6 +25,7 @@ public class PersonBuilder {
     private Phone phone;
     private Email email;
     private Address address;
+    private boolean interviewed;
     private Set<Tag> tags;
 
     /**
@@ -35,6 +36,7 @@ public class PersonBuilder {
         phone = new Phone(DEFAULT_PHONE);
         email = new Email(DEFAULT_EMAIL);
         address = new Address(DEFAULT_ADDRESS);
+        interviewed = Person.DEFAULT_INTERVIEWED;
         tags = new HashSet<>();
     }
 
@@ -46,6 +48,7 @@ public class PersonBuilder {
         phone = personToCopy.getPhone();
         email = personToCopy.getEmail();
         address = personToCopy.getAddress();
+        interviewed = personToCopy.isInterviewed();
         tags = new HashSet<>(personToCopy.getTags());
     }
 
@@ -89,8 +92,16 @@ public class PersonBuilder {
         return this;
     }
 
+    /**
+     * Sets the interviewed status of the {@code Person} that we are building.
+     */
+    public PersonBuilder withInterviewed(boolean interviewed) {
+        this.interviewed = interviewed;
+        return this;
+    }
+
     public Person build() {
-        return new Person(name, phone, email, address, tags);
+        return new Person(name, phone, email, address, tags, interviewed);
     }
 
 }

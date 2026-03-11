@@ -16,6 +16,8 @@ import seedu.address.model.tag.Tag;
  */
 public class Person {
 
+    public static final boolean DEFAULT_INTERVIEWED = false;
+
     // Identity fields
     private final Name name;
     private final Phone phone;
@@ -23,17 +25,26 @@ public class Person {
 
     // Data fields
     private final Address address;
+    private final boolean interviewed;
     private final Set<Tag> tags = new HashSet<>();
 
     /**
      * Every field must be present and not null.
      */
     public Person(Name name, Phone phone, Email email, Address address, Set<Tag> tags) {
+        this(name, phone, email, address, tags, DEFAULT_INTERVIEWED);
+    }
+
+    /**
+     * Every field must be present and not null.
+     */
+    public Person(Name name, Phone phone, Email email, Address address, Set<Tag> tags, boolean interviewed) {
         requireAllNonNull(name, phone, email, address, tags);
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.address = address;
+        this.interviewed = interviewed;
         this.tags.addAll(tags);
     }
 
@@ -51,6 +62,10 @@ public class Person {
 
     public Address getAddress() {
         return address;
+    }
+
+    public boolean isInterviewed() {
+        return interviewed;
     }
 
     /**
@@ -94,13 +109,14 @@ public class Person {
                 && phone.equals(otherPerson.phone)
                 && email.equals(otherPerson.email)
                 && address.equals(otherPerson.address)
+                && interviewed == otherPerson.interviewed
                 && tags.equals(otherPerson.tags);
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, address, tags);
+        return Objects.hash(name, phone, email, address, interviewed, tags);
     }
 
     @Override
@@ -110,6 +126,7 @@ public class Person {
                 .add("phone", phone)
                 .add("email", email)
                 .add("address", address)
+                .add("interviewed", interviewed)
                 .add("tags", tags)
                 .toString();
     }
