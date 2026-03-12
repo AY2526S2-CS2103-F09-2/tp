@@ -53,7 +53,7 @@ public class MarkCommand extends Command {
             true
         );
         model.setPerson(personToMark, editedPerson);
-        return new CommandResult(String.format(MESSAGE_MARK_PERSON_SUCCESS, Messages.format(personToMark)));
+        return new CommandResult(String.format(MESSAGE_MARK_PERSON_SUCCESS, Messages.format(editedPerson)));
     }
 
     @Override
