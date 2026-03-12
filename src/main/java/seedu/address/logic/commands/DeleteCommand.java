@@ -62,8 +62,12 @@ public class DeleteCommand extends Command {
 
     @Override
     public boolean equals(Object other) {
-        if (other == this) return true;
-        if (!(other instanceof DeleteCommand)) return false;
+        if (other == this) {
+            return true;
+        }
+        if (!(other instanceof DeleteCommand)) {
+            return false;
+        }
         DeleteCommand otherDeleteCommand = (DeleteCommand) other;
         return targetIndexes.equals(otherDeleteCommand.targetIndexes);
     }
