@@ -9,6 +9,8 @@ import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.tag.Tag;
+import seedu.address.model.person.Remark;
+
 
 /**
  * Represents a Person in the address book.
@@ -17,6 +19,8 @@ import seedu.address.model.tag.Tag;
 public class Person {
 
     public static final boolean DEFAULT_INTERVIEWED = false;
+    public static final String DEFAULT_REMARK = "";
+
 
     // Identity fields
     private final Name name;
@@ -26,6 +30,7 @@ public class Person {
     // Data fields
     private final Address address;
     private final boolean interviewed;
+    private final Remark remark;                             // <-- add this
     private final Set<Tag> tags = new HashSet<>();
 
     /**
@@ -46,6 +51,21 @@ public class Person {
         this.address = address;
         this.interviewed = interviewed;
         this.tags.addAll(tags);
+        this.remark = new Remark(Remark.DEFAULT_REMARK);
+    }
+
+    /**
+     * Every field must be present and not null.
+     */
+    public Person(Name name, Phone phone, Email email, Address address, Set<Tag> tags, boolean interviewed, Remark remark) {
+        requireAllNonNull(name, phone, email, address, tags);
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.interviewed = interviewed;
+        this.tags.addAll(tags);
+        this.remark = remark;
     }
 
     public Name getName() {
@@ -67,6 +87,8 @@ public class Person {
     public boolean isInterviewed() {
         return interviewed;
     }
+
+    public Remark getRemark() { return remark; }
 
     /**
      * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
@@ -110,13 +132,14 @@ public class Person {
                 && email.equals(otherPerson.email)
                 && address.equals(otherPerson.address)
                 && interviewed == otherPerson.interviewed
+                && remark.equals(otherPerson.remark)
                 && tags.equals(otherPerson.tags);
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, address, interviewed, tags);
+        return Objects.hash(name, phone, email, address, interviewed, remark, tags);
     }
 
     @Override
@@ -127,6 +150,7 @@ public class Person {
                 .add("email", email)
                 .add("address", address)
                 .add("interviewed", interviewed)
+                .add("remark", remark)
                 .add("tags", tags)
                 .toString();
     }
