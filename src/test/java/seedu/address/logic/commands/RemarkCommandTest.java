@@ -22,10 +22,12 @@ import seedu.address.testutil.PersonBuilder;
 
 public class RemarkCommandTest {
 
-    private static final Remark REMARK_STUB = new Remark("Strong in algorithms.");
+    private static final Remark REMARK_STUB =
+            new Remark("Strong in algorithms.");
     private static final Remark REMARK_EMPTY = new Remark("");
 
-    private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
+    private Model model = new ModelManager(getTypicalAddressBook(),
+            new UserPrefs());
 
     @Test
     public void execute_addRemarkUnfilteredList_success() {
