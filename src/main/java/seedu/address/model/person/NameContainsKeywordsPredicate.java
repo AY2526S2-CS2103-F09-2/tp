@@ -15,29 +15,19 @@ import seedu.address.commons.util.ToStringBuilder;
  */
 public class NameContainsKeywordsPredicate implements Predicate<Person> {
     private final List<String> keywords;
-    private final double threshold;
     private final FuzzySimilarityUtil fuzzyUtil;
-
-
-    public NameContainsKeywordsPredicate(List<String> keywords) {
-        this(keywords, 0.5);
-    }
 
     /**
      * Constructs a predicate with a custom similarity threshold.
      * @param keywords  The list of keywords to match
-     * @param threshold Minimum similarity of range [0.0, 1.0] to
-     *                  be considered a match
      */
-    public NameContainsKeywordsPredicate(List<String> keywords,
-                                         double threshold) {
+    public NameContainsKeywordsPredicate(List<String> keywords) {
         this.keywords = keywords;
         List<SimilarityMetric> metrics = List.of(
                 new LevenshteinDistanceUtil(),
-                new CosineNGramUtil(3)
+                new CosineNGramUtil(2)
         );
         this.fuzzyUtil = new FuzzySimilarityUtil(metrics);
-        this.threshold = threshold;
     }
 
     @Override
@@ -47,9 +37,13 @@ public class NameContainsKeywordsPredicate implements Predicate<Person> {
                 .map(String::toLowerCase)
                 .anyMatch(keyword -> {
                     String normalizedKeyword = keyword.toLowerCase();
+                    double dynamicThreshold = getThreshold(
+                            Math.min(keyword.length(), normalizedKeyword.length()));
                     return Arrays.stream(name)
                             .anyMatch(word ->
-                                    fuzzyUtil.isSimilar(word, keyword, threshold));
+                                    word.contains(normalizedKeyword)
+                                            || fuzzyUtil.isSimilar(word, normalizedKeyword,
+                                            dynamicThreshold));
                 });
     }
 
@@ -65,9 +59,30 @@ public class NameContainsKeywordsPredicate implements Predicate<Person> {
         }
 
         NameContainsKeywordsPredicate otherNameContainsKeywordsPredicate = (NameContainsKeywordsPredicate) other;
-        return keywords.equals(otherNameContainsKeywordsPredicate.keywords)
-                && threshold
-                == otherNameContainsKeywordsPredicate.threshold;
+        return keywords.equals(otherNameContainsKeywordsPredicate.keywords);
+    }
+
+    /**
+     * Returns a similarity threshold for fuzzy matching
+     * based on the length of the word.
+     * <p>
+     * Short words are given a lower threshold to allow for
+     * more leniency in fuzzy matches,
+     * while longer words use a stricter threshold to reduce false positive.
+     *
+     * <ul>
+     *     <li>Words of length 3 or less: threshold are set to be more lenient to 0.5</li>
+     *     <li>Words of length long than 3: threshold are set to be stricter to 0.8</li>
+     * </ul>
+     *
+     * @param minWordLength Length of the shorter of the two words being compared
+     * @return the similarity threshold in the range [0.0, 1.0] for use in fuzzy search
+     */
+    private static double getThreshold(int minWordLength) {
+        if (minWordLength <= 3) {
+            return 0.5;
+        }
+        return 0.8;
     }
 
     @Override

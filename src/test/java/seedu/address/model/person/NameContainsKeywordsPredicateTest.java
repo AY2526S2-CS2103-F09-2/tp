@@ -82,4 +82,52 @@ public class NameContainsKeywordsPredicateTest {
         String expected = NameContainsKeywordsPredicate.class.getCanonicalName() + "{keywords=" + keywords + "}";
         assertEquals(expected, predicate.toString());
     }
+
+    @Test
+    public void test_partialMatch_returnsTrue() {
+        NameContainsKeywordsPredicate predicate =
+                new NameContainsKeywordsPredicate(List.of("Ali"));
+
+        assertTrue(predicate.test(new PersonBuilder().withName("Alice Bob").build()));
+    }
+
+    @Test
+    public void test_fuzzyMatchTypo_returnsTrue() {
+        NameContainsKeywordsPredicate predicate =
+                new NameContainsKeywordsPredicate(List.of("Alic"));
+
+        assertTrue(predicate.test(new PersonBuilder().withName("Alice Bob").build()));
+    }
+
+    @Test
+    public void test_fuzzyMatchMultipleWords_returnsTrue() {
+        NameContainsKeywordsPredicate predicate =
+                new NameContainsKeywordsPredicate(List.of("Bbo"));
+
+        assertTrue(predicate.test(new PersonBuilder().withName("Alice Bob").build()));
+    }
+
+    @Test
+    public void test_fuzzyBelowThreshold_returnsFalse() {
+        NameContainsKeywordsPredicate predicate =
+                new NameContainsKeywordsPredicate(List.of("xyz"));
+
+        assertFalse(predicate.test(new PersonBuilder().withName("Alice Bob").build()));
+    }
+
+    @Test
+    public void test_partialMatchWithinSingleToken_returnsTrue() {
+        NameContainsKeywordsPredicate predicate =
+                new NameContainsKeywordsPredicate(List.of("lic"));
+
+        assertTrue(predicate.test(new PersonBuilder().withName("Alice").build()));
+    }
+
+    @Test
+    public void test_completelyDifferent_returnsFalse() {
+        NameContainsKeywordsPredicate predicate =
+                new NameContainsKeywordsPredicate(List.of("Zebra"));
+
+        assertFalse(predicate.test(new PersonBuilder().withName("Alice Bob").build()));
+    }
 }
