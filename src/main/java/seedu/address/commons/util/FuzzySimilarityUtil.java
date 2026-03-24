@@ -1,6 +1,9 @@
 package seedu.address.commons.util;
 
 import java.util.List;
+import java.util.logging.Logger;
+
+import seedu.address.commons.core.LogsCenter;
 
 /**
  * Utility class that combines multiple {@link SimilarityMetric} implementations
@@ -12,7 +15,12 @@ import java.util.List;
  */
 public class FuzzySimilarityUtil {
 
+    private static final double EPSILON = 1e-06;
+
     private final List<SimilarityMetric> metrics;
+    private final Logger logger =
+            LogsCenter.getLogger(FuzzySimilarityUtil.class);
+
 
     /**
      * Constructs a new {@code FuzzySimilarityUtil} with the given list of similarity metrics.
@@ -34,7 +42,7 @@ public class FuzzySimilarityUtil {
      * The score returned is the maximum similarity value across all metrics.
      * @param first   The first string to compare
      * @param second  The second string to compare
-     * @return the highest similarity score among all metrics,
+     * @return the maximum similarity score among all metrics,
      *          in the range of [0.0, 1.0]
      * @throws NullPointerException if {@code first} or {@code second} is null
      */
@@ -42,14 +50,18 @@ public class FuzzySimilarityUtil {
         if (first == null || second == null) {
             throw new NullPointerException("Input strings must not be null");
         }
-        double score = 0.0;
+
+        double maxScore = 0.0;
 
         for (SimilarityMetric metric : metrics) {
-            score += metric.similarity(first, second);
-
+            double current = metric.similarity(first, second);
+            logger.warning(metric + ": " + current);
+            if (current > maxScore) {
+                maxScore = current;
+            }
         }
 
-        return score / metrics.size();
+        return maxScore;
     }
 
     /**
@@ -72,6 +84,6 @@ public class FuzzySimilarityUtil {
         if (threshold < 0.0 || threshold > 1.0) {
             throw new IllegalArgumentException("Threshold must be between 0.0 and 1.0");
         }
-        return computeSimilarity(first, second) >= threshold;
+        return computeSimilarity(first, second) + EPSILON >= threshold;
     }
 }

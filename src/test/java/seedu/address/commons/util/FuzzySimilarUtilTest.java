@@ -32,8 +32,7 @@ public class FuzzySimilarUtilTest {
 
         ));
 
-        double expectedMean = (0.2 + 0.7 + 0.5) / 3;
-        assertEquals(expectedMean, util.computeSimilarity("a", "b"));
+        assertEquals(0.7, util.computeSimilarity("a", "b"));
     }
 
     @Test
@@ -66,7 +65,7 @@ public class FuzzySimilarUtilTest {
                 new DummyMetric(0.8),
                 new DummyMetric(1.0)
         ));
-        assertFalse(util.isSimilar("a", "b", 1.0));
+        assertTrue(util.isSimilar("a", "b", 1.0));
     }
 
 }
