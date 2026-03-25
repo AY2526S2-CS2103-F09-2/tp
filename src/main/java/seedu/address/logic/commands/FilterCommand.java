@@ -1,7 +1,8 @@
 package seedu.address.logic.commands;
 
-import java.util.function.Predicate;
 import static java.util.Objects.requireNonNull;
+
+import java.util.function.Predicate;
 
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
@@ -15,10 +16,10 @@ public class FilterCommand extends PredicateCommand {
 
     public static final String COMMAND_WORD = "filter";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Filters the current list of persons by the given arguments";
-            // + "the specified keywords (case-insensitive) and displays them as a list with index numbers.\n"
-            // + "Parameters: KEYWORD [MORE_KEYWORDS]...\n"
-            // + "Example: " + COMMAND_WORD + " alice bob charlie";
+    public static final String MESSAGE_USAGE = COMMAND_WORD
+        + ": Filters the current list of persons by the given parameters"
+        + "Parameters: -interviewed (y/n/0/1)\n"
+        + "Example: " + COMMAND_WORD + " -interviewed y";
 
     public FilterCommand(Predicate<Person> predicate) {
         super(predicate);

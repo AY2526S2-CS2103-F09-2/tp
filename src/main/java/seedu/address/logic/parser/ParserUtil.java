@@ -132,8 +132,7 @@ public class ParserUtil {
     public static boolean parseBoolean(String bool) throws ParseException {
         if (bool.equals("y") || bool.equals("1")) {
             return true;
-        }
-        else if (bool.equals("n") || bool.equals("0")) {
+        } else if (bool.equals("n") || bool.equals("0")) {
             return false;
         }
         throw new ParseException(MESSAGE_INVALID_BOOLEAN);
