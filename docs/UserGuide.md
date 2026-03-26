@@ -197,9 +197,11 @@ Format: `clear`
 
 ### Exiting the program : `exit`
 
-Exits the program.
+Exits the program and closes the application.
 
 Format: `exit`
+
+Alias: `bye`
 
 ### Saving the data
 
