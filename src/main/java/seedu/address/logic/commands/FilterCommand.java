@@ -40,12 +40,12 @@ public class FilterCommand extends PredicateCommand {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof FindCommand)) {
+        if (!(other instanceof FilterCommand)) {
             return false;
         }
 
-        FindCommand otherFindCommand = (FindCommand) other;
-        return this.getPredicate().equals(otherFindCommand.getPredicate());
+        FilterCommand otherFilterCommand = (FilterCommand) other;
+        return this.getPredicate().equals(otherFilterCommand.getPredicate());
     }
 
     @Override
