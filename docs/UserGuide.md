@@ -141,6 +141,7 @@ Format: `filter -interviewed y/n/1/0`
 Examples:
 * `filter -interviewed y` returns persons who are marked as interviewed.
 * `filter -interviewed 0` returns persons who are <u>not</u> marked as interviewed.
+  ![result for 'filter -interviewed 1'](images/FilterCommandExample.png)
 
 ### Deleting a person : `delete`
 
