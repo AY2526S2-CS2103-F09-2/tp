@@ -75,13 +75,13 @@ public class FilterCommandTest {
     }
 
     @Test
-    public void equals_differentType_int_returnsFalse() {
+    public void equals_differentTypeInt_returnsFalse() {
         FilterCommand command = new FilterCommand(new IsInterviewedPredicate(true));
         assertFalse(command.equals(42));
     }
 
     @Test
-    public void equals_differentType_string_returnsFalse() {
+    public void equals_differentTypeString_returnsFalse() {
         FilterCommand command = new FilterCommand(new IsInterviewedPredicate(true));
         assertFalse(command.equals("filter"));
     }
