@@ -117,10 +117,10 @@ Finds persons whose names contain any of the given keywords.
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
 * The search is case-insensitive. e.g. `hans` will match `Hans`
-* The search supports minor typo. e.g. `Alicd` will match `Alice`
+* The search supports typos via fuzzy matching. e.g. `Alicd` will match `Alice`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
 * Only the name is searched.
-* Only full words will be matched e.g. `Han` will not match `Hans`
+* Partial word matching is supported e.g. `Han` will match `Hans`
 * Persons matching at least one keyword will be returned (i.e. `OR` search).
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
@@ -129,6 +129,19 @@ Examples:
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
   ![result for 'find alex david'](images/findAlexDavidResult.png)
 * `find aled` returns `Alex Yeoh`<br> ![result for 'find aled'](images/findAledResult.png)
+
+### Filtering persons by name: `filter`
+
+Finds persons whose names match any of the given filters.
+
+Format: `filter -interviewed y/n/1/0`
+
+* The filter will be done on all persons, not only the currently listed ones.
+
+Examples:
+* `filter -interviewed y` returns persons who are marked as interviewed.
+* `filter -interviewed 0` returns persons who are <u>not</u> marked as interviewed.
+  ![result for 'filter -interviewed 1'](images/FilterCommandExample.png)
 
 ### Deleting a person : `delete`
 
@@ -197,9 +210,11 @@ Format: `clear`
 
 ### Exiting the program : `exit`
 
-Exits the program.
+Exits the program and closes the application.
 
 Format: `exit`
+
+Alias: `bye`
 
 ### Saving the data
 

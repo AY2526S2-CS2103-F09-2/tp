@@ -1,28 +1,36 @@
 package seedu.address.logic.commands;
 
+import static java.util.Objects.requireNonNull;
+
 import java.util.function.Predicate;
 
 import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.logic.Messages;
+import seedu.address.model.Model;
 import seedu.address.model.person.Person;
 
 /**
- * Abstract class
- * Finds and lists all persons in address book whose name matches the predicate.
+ * Finds and lists all persons in address book whose details match the given predicate
  */
-public abstract class FilterCommand extends Command {
+public class FilterCommand extends PredicateCommand {
 
-    private final Predicate<Person> predicate;
+    public static final String COMMAND_WORD = "filter";
 
-    protected FilterCommand(Predicate<Person> predicate) {
-        this.predicate = predicate;
+    public static final String MESSAGE_USAGE = COMMAND_WORD
+        + ": Filters the current list of persons by the given parameters"
+        + "Parameters: -interviewed (y/n/0/1)\n"
+        + "Example: " + COMMAND_WORD + " -interviewed y";
+
+    public FilterCommand(Predicate<Person> predicate) {
+        super(predicate);
     }
 
-    /**
-     * Getter for Predicate
-     * @return Predicate
-     */
-    protected Predicate<Person> getPredicate() {
-        return this.predicate;
+    @Override
+    public CommandResult execute(Model model) {
+        requireNonNull(model);
+        model.updateFilteredPersonList(this.getPredicate());
+        return new CommandResult(
+                String.format(Messages.MESSAGE_PERSONS_LISTED_OVERVIEW, model.getFilteredPersonList().size()));
     }
 
     @Override
@@ -37,13 +45,13 @@ public abstract class FilterCommand extends Command {
         }
 
         FilterCommand otherFilterCommand = (FilterCommand) other;
-        return predicate.equals(otherFilterCommand.predicate);
+        return this.getPredicate().equals(otherFilterCommand.getPredicate());
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .add("predicate", predicate)
+                .add("predicate", this.getPredicate())
                 .toString();
     }
 }
