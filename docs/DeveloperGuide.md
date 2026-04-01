@@ -245,7 +245,7 @@ This is useful for storing additional qualitative notes such as interview impres
 The feature is implemented using `RemarkCommand` and `RemarkCommandParser`.
 
 When the user executes a command such as:
-`remark 1 Strong in algorithms` 
+`remark 1 Strong in algorithms`
 the following steps occur:
 1. The input command is received by the `LogicManager`
 2. `AddressBookParser` identifies the command and delegates parsing to `RemarkCommandParser`.
