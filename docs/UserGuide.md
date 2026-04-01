@@ -15,15 +15,15 @@ RecruiterPlus is a **desktop app for managing contacts, optimized for use via a 
 1. Ensure you have Java `17` or above installed in your Computer.<br>
    **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
 
-1. Download the latest `.jar` file from [here](https://github.com/AY2526S2-CS2103-F09-2/tp/releases).
+2. Download the latest `.jar` file from [here](https://github.com/AY2526S2-CS2103-F09-2/tp/releases).
 
-1. Copy the file to the folder you want to use as the _home folder_ for your RecruiterPlus.
+3. Copy the file to the folder you want to use as the _home folder_ for your RecruiterPlus.
 
-1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar recruiterplus.jar` command to run the application.<br>
+4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar recruiterplus.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
-1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
    * `list` : Lists all contacts.
@@ -36,7 +36,7 @@ RecruiterPlus is a **desktop app for managing contacts, optimized for use via a 
 
    * `exit` : Exits the app.
 
-1. Refer to the [Features](#features) below for details of each command.
+6. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -77,7 +77,10 @@ Format: `help`
 
 Adds a person to the recruiterplus.
 
-Format: `add -name NAME -phone PHONE_NUMBER -email EMAIL -address ADDRESS [-tag TAG]…​`
+Format: `add -name NAME -phone PHONE_NUMBER -email EMAIL -address ADDRESS -tag TAG…​`
+* At least the `-name`, `-phone`, `-email` and `-address` fields must be provided.
+* The `-tag` field is optional.
+* The `-tag` field can be used multiple times to add multiple tags to a person. Eg: `-tag friend -tag colleague` adds the tags `friend` and `colleague` to the person.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 A person can have any number of tags (including 0)
@@ -86,6 +89,7 @@ A person can have any number of tags (including 0)
 Examples:
 * `add -name John Doe -phone 98765432 -email johnd@example.com -address John street, block 123, #01-01`
 * `add -name Betsy Crowe -tag friend -email betsycrowe@example.com -address Newgate Prison -phone 12345678 -tag criminal`
+* `add -name Bo Yang -phone 87654321 -email boyang@example.com -address Bo's street, block 321, #01-02 -tag colleague -tag friend` to add multiple tags, use -tag [TAG] multiple times.
 
 ### Listing all persons : `list`
 
@@ -103,12 +107,13 @@ Format: `edit INDEX [-name NAME] [-phone PHONE] [-email EMAIL] [-address ADDRESS
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
 * When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
-* You can remove all the person’s tags by typing `-tag ` without
-    specifying any tags after it.
+* You can remove all the person’s tags by typing `-tag ` without specifying any tags after it.
+* You can add multiple tags by using `-tag [TAG]` multiple times.
 
 Examples:
 *  `edit 1 -phone 91234567 -email johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
 *  `edit 2 -name Betsy Crower -tag` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
+*  `edit 3 -tag friend -tag colleague` Edits the tags of the 3rd person to be `friend` and `colleague`.
 
 ### Locating persons by name: `find`
 
