@@ -28,6 +28,9 @@ public class CandidateDetailsPanel extends UiPart<Region> {
     private Label tagsLabel;
 
     @FXML
+    private Label interviewedLabel;
+
+    @FXML
     private Label remarkLabel;
 
     public CandidateDetailsPanel() {
@@ -53,6 +56,7 @@ public class CandidateDetailsPanel extends UiPart<Region> {
                         .reduce((t1, t2) -> t1 + ", " + t2)
                         .orElse("")
         );
+        interviewedLabel.setText(person.isInterviewed() ? "Interviewed" : "Not Interviewed");
         remarkLabel.setText(person.getRemark().value);
     }
 
@@ -65,6 +69,7 @@ public class CandidateDetailsPanel extends UiPart<Region> {
         phoneLabel.setText("");
         addressLabel.setText("");
         tagsLabel.setText("");
+        interviewedLabel.setText("");
         remarkLabel.setText("");
     }
 }

@@ -17,7 +17,7 @@ public class FilterCommand extends PredicateCommand {
     public static final String COMMAND_WORD = "filter";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-        + ": Filters the current list of persons by the given parameters\n"
+        + ": Filters the current list of persons by the given parameters"
         + "Parameters: -interviewed (y/n/0/1)\n"
         + "Example: " + COMMAND_WORD + " -interviewed y";
 
