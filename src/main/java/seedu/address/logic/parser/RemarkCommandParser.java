@@ -20,7 +20,7 @@ public class RemarkCommandParser implements Parser<RemarkCommand> {
 
     // Prefixes that are not valid remark content — user likely made a syntax mistake
     private static final String[] DISALLOWED_REMARK_PREFIXES = {
-            "-name", "-phone", "-email", "-address", "-tag", "-remark", "-interviewed"
+        "-name", "-phone", "-email", "-address", "-tag", "-remark", "-interviewed"
     };
 
     /**

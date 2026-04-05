@@ -262,17 +262,17 @@ public class ParserUtil {
         logger.fine("ParserUtil.parseBoolean: parsing '" + bool + "'");
 
         switch (bool.trim()) {
-            case "y":
-            case "1":
-                logger.finest("ParserUtil.parseBoolean: resolved to true");
-                return true;
-            case "n":
-            case "0":
-                logger.finest("ParserUtil.parseBoolean: resolved to false");
-                return false;
-            default:
-                logger.info("ParserUtil.parseBoolean: unrecognised boolean token '" + bool + "'");
-                throw new ParseException(MESSAGE_INVALID_BOOLEAN);
+        case "y":
+        case "1":
+            logger.finest("ParserUtil.parseBoolean: resolved to true");
+            return true;
+        case "n":
+        case "0":
+            logger.finest("ParserUtil.parseBoolean: resolved to false");
+            return false;
+        default:
+            logger.info("ParserUtil.parseBoolean: unrecognised boolean token '" + bool + "'");
+            throw new ParseException(MESSAGE_INVALID_BOOLEAN);
         }
     }
 }
