@@ -152,7 +152,7 @@ Examples:
 
 Deletes the specified person from the recruiterplus.
 
-Format: `delete INDEX`
+Format: `delete INDEX [MORE INDICES]`
 
 * Deletes the person at the specified `INDEX`.
 * The index refers to the index number shown in the displayed person list.
@@ -161,6 +161,7 @@ Format: `delete INDEX`
 Examples:
 * `list` followed by `delete 2` deletes the 2nd person in the recruiterplus.
 * `find Betsy` followed by `delete 1` deletes the 1st person in the results of the `find` command.
+* `delete 1 2 3` deletes the first 3 people in the current view.
 
 ### Marking a candidate as interviewed : `mark`
 
