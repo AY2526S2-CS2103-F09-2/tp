@@ -29,6 +29,7 @@ public class MarkCommand extends Command {
     private final Index targetIndex;
 
     public MarkCommand(Index targetIndex) {
+        requireNonNull(targetIndex);
         this.targetIndex = targetIndex;
     }
 
