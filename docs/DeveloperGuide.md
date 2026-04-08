@@ -410,8 +410,8 @@ Use case ends.
    Use case ends.
 
 * 2d. Invalid phone number.
-   * 2d1. RecruiterPlus shows:
-      * Invalid phone number: use 8 digits, spaces/hyphens allowed.
+  * 2d1.RecruiterPlus shows:
+    * Phone numbers must contain exactly 8 digits (0-9). No spaces, dashes, or other characters are allowed.
 
    Use case ends.
 
