@@ -41,9 +41,15 @@ public class RemarkCommandParserTest {
     }
 
     @Test
-    public void parse_deprecatedPrefix_throwsParseException() {
-        assertParseFailure(parser, "1 -remark Strong in algorithms.",
-                String.format(MESSAGE_INVALID_COMMAND_FORMAT, RemarkCommand.MESSAGE_USAGE));
+    public void parse_validRemarkStartingWithDeprecatedPrefix_success() {
+        assertParseSuccess(parser, "1 -remark Strong in algorithms.",
+                new RemarkCommand(INDEX_FIRST_PERSON, new Remark("-remark Strong in algorithms.")));
+    }
+
+    @Test
+    public void parse_validRemarkStartingWithAddPrefix_success() {
+        assertParseSuccess(parser, "1 -name mismatch with resume",
+                new RemarkCommand(INDEX_FIRST_PERSON, new Remark("-name mismatch with resume")));
     }
 
     @Test
