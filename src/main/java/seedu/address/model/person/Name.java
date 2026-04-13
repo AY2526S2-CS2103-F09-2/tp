@@ -9,7 +9,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class Name {
 
-    private static final int MAX_LENGTH = 80;
+    public static final int MAX_LENGTH = 80;
 
     public static final String MESSAGE_CONSTRAINTS =
             "Names should only contain English letters (A-Z, a-z) and spaces, "

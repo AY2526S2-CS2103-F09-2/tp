@@ -82,8 +82,8 @@ public class ParserUtil {
             throw new ParseException(Name.MESSAGE_CONSTRAINTS);
         }
 
-        if (trimmedName.length() > 80) {
-            logger.info("ParserUtil.parseName: name exceeds " + 80
+        if (trimmedName.length() > Name.MAX_LENGTH) {
+            logger.info("ParserUtil.parseName: name exceeds " + Name.MAX_LENGTH
                     + " characters — length=" + trimmedName.length());
             throw new ParseException(Name.MESSAGE_CONSTRAINTS);
         }
@@ -175,8 +175,8 @@ public class ParserUtil {
             throw new ParseException(Email.MESSAGE_CONSTRAINTS);
         }
 
-        if (trimmedEmail.length() > 254) {
-            logger.info("ParserUtil.parseEmail: email exceeds " + 254
+        if (trimmedEmail.length() > Email.MAX_EMAIL_LENGTH) {
+            logger.info("ParserUtil.parseEmail: email exceeds " + Email.MAX_EMAIL_LENGTH
                     + " characters — length=" + trimmedEmail.length());
             throw new ParseException(Email.MESSAGE_CONSTRAINTS);
         }
