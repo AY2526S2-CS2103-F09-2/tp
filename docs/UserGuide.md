@@ -83,8 +83,6 @@ RecruiterPlus is a desktop app meant for **Recruiters** to **efficiently manage 
 
 Prints a help message with a description of all commands, as well as a link to this User Guide.
 
-![help message](images/helpMessage.png)
-
 Format: `help`
 
 
