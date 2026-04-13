@@ -152,6 +152,13 @@ Examples:
   ![result for 'find alex david'](images/findAlexDavidResult.png)
 * `find aled` returns `Alex Yeoh`<br> ![result for 'find aled'](images/findAledResult.png)
 
+
+<div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
+Because `find` uses fuzzy and partial matching,
+it may return multiple similar or loosely matching results, which
+may require manual filtering.
+</div>
+
 ### Filtering persons by interview status: `filter`
 
 Finds persons by interviewed status.
