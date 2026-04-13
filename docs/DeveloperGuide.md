@@ -314,7 +314,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *` | technical recuiter          | find a candidate by name                              | locate details of candidates without having to go through the entire list |
 | `* *` | technical recuiter          | filter candidates by interview status                 | see which interviewees have not been interviewed                       |
 | `* *`   | technical recuiter          | search candidates by skills                           | save time performing repetitive tasks                                  |
-| `* *`  | technical recuiter      | search candidates using keywords or technical skills  | locate relevant contacts                                               |
+| `* *`  | technical recuiter      | search candidates using keywords or technical skills  | locate relevant candidates                                               |
 | `* *`   | technical recuiter      | unmark candidate as interviewed                       | correct candidates who were wrongly marked as interviewed              |
 | `*`   | technical recuiter      | filter candidates by multiple criteria simultaneously | quickly identify candidates ready for the next step                    |
 
@@ -555,7 +555,7 @@ testers are expected to do more *exploratory* testing.
    1. Download the jar file and copy into an empty folder
 
    1. Double-click the jar file. <br>
-   Expected: Shows the GUI with a set of sample contacts. The initial window size and position may not be optimal.
+   Expected: Shows the GUI with a set of sample candidates. The initial window size and position may not be optimal.
 
 1. Saving window preferences
 
@@ -578,7 +578,7 @@ testers are expected to do more *exploratory* testing.
    1. Prerequisites: List all candidates using the `list` command. Multiple candidates in the list.
 
    1. Test case: `delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+      Expected: First candidate is deleted from the list. Details of the deleted candidate shown in the status message. Timestamp in the status bar is updated.
 
    1. Test case: `delete 1 3`<br>
       Expected: The 1st and 3rd displayed candidates are deleted in one command.The result message lists both deletions.

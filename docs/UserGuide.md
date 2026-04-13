@@ -3,7 +3,7 @@ layout: page
 title: User Guide
 ---
 
-RecruiterPlus is a **desktop app for managing contacts, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, RecruiterPlus can get your contact management tasks done faster than traditional GUI apps.
+RecruiterPlus is a **desktop app for managing candidates, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, RecruiterPlus can get your candidate management tasks done faster than traditional GUI apps.
 
 * Table of Contents
 {:toc}
@@ -31,13 +31,13 @@ RecruiterPlus is a **desktop app for managing contacts, optimized for use via a 
 5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will display the command reference in the command output.<br>
    Some example commands you can try:
 
-   * `list` : Lists all contacts.
+   * `list` : Lists all candidates.
 
-   * `add -name John Doe -phone 98765432 -email johnd@example.com -address John street, block 123, #01-01` : Adds a contact named `John Doe` to the RecruiterPlus.
+   * `add -name John Doe -phone 98765432 -email johnd@example.com -address John street, block 123, #01-01` : Adds a candidate named `John Doe` to the RecruiterPlus.
 
-   * `delete 3` : Deletes the 3rd contact shown in the current list.
+   * `delete 3` : Deletes the 3rd candidate shown in the current list.
 
-   * `clear` : Deletes all contacts.
+   * `clear` : Deletes all candidates.
 
    * `exit` : Exits the app.
 
