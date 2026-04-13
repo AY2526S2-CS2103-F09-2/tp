@@ -19,7 +19,12 @@ RecruiterPlus is a **desktop app for managing contacts, optimized for use via a 
 
 3. Copy the file to the folder you want to use as the _home folder_ for your RecruiterPlus.
 
-4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar recruiterplus.jar` command to run the application.<br>
+4. Open a command terminal, then navigate to the folder containing `recruiterplus.jar`.
+   `cd` means "change directory" (move into a folder).
+   Type these commands in the terminal:
+   * macOS/Linux: `cd /path/to/your/folder`
+   * Windows: `cd C:\path\to\your\folder`
+   * Then run: `java -jar recruiterplus.jar`<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
@@ -107,7 +112,8 @@ Edits an existing candidate in the recruiterplus.
 
 Format: `edit INDEX [-name NAME] [-phone PHONE] [-email EMAIL] [-address ADDRESS] [-tag TAG]…​`
 
-* Edits the candidate at the specified `INDEX`. The index refers to the index number shown in the displayed candidate list. The index **must be a positive integer** 1, 2, 3, …​
+* Edits the candidate at the specified `INDEX`. The index refers to the index number shown in the displayed candidate list.
+* `INDEX` must be a non-negative integer. If `INDEX` is `0` or larger than the displayed list size, RecruiterPlus shows an invalid index error.
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
 * If `-phone` is provided, it must be exactly 8 digits and start with `8` or `9`.
@@ -233,6 +239,7 @@ Format: `remark INDEX [REMARK]`
 * An existing remark will be overwritten by the new remark.
 * Using `remark INDEX` without specifying any remark text removes the existing remark.
 * A valid remark can consist of zero or more alphanumeric characters (letters and digits), spaces, and the following symbols: `. , ! ? ' " ( ) - / : @ # $ % & + * = [ ]`
+* Everything after `INDEX` is treated as remark text (subject to remark character and length constraints).
 
 Examples:
 * `remark 1 Strong in algorithms.` adds the remark "Strong in algorithms." to the 1st candidate.

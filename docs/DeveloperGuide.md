@@ -36,7 +36,7 @@ Given below is a quick overview of main components and how they interact with ea
 
 **Main components of the architecture**
 
-**`Main`** (consisting of classes [`Main`](https://github.com/se-edu/AY2526S2-CS2103-F09-2/tp/tree/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/se-edu/AY2526S2-CS2103-F09-2/tp/tree/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
+**`Main`** (consisting of classes [`Main`](https://github.com/AY2526S2-CS2103-F09-2/tp/tree/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/AY2526S2-CS2103-F09-2/tp/tree/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
 * At app launch, it initializes the other components in the correct sequence, and connects them up with each other.
 * At shut down, it shuts down the other components and invokes cleanup methods where necessary.
 
@@ -180,14 +180,15 @@ The table below summarizes the key parameter constraints enforced by the parser 
 
 | Command | Parameter constraints                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `add` | Requires `-name`, `-phone`, `-email`, and `-address`. `-tag` is optional and repeatable. `Name` must contain only letters and spaces and start with a letter, and be at most 80 characters. `Phone` must be exactly 8 digits and start with `8` or `9`. `Email` must satisfy the existing email validation and be at most 254 characters. `Address` must be at most 50 characters and may contain letters, digits, spaces, commas, periods, hyphens, hashes, slashes, and apostrophes. `Tag` must be alphanumeric. |
-| `edit` | Requires a positive integer index and at least one field to edit. `-name`, `-phone`, `-email`, and `-address` follow the same constraints as `add`. `-tag` is repeatable, but it replaces the full tag set instead of appending.                                                                                                                                                                                                             |
+
+| `add` | Requires `-name`, `-phone`, `-email`, and `-address`. `-tag` is optional and repeatable. `Name` must contain only letters and spaces and start with a letter, and be at most 80 characters. `Phone` must be exactly 8 digits and start with `8` or `9`. `Email` must satisfy the existing email validation and be at most 254 characters. `Address` must be at most 50 characters and may contain letters, digits, spaces, commas, periods, hyphens, hashes and slashes, and apostrophes. `Tag` must be alphanumeric. |
+| `edit` | Requires a non-negative integer index and at least one field to edit. If the index is `0` or out of range, command execution returns the invalid index error. `-name`, `-phone`, `-email`, and `-address` follow the same constraints as `add`. `-tag` is repeatable, but it replaces the full tag set instead of appending.                                                                                                                                                                                                             |
 | `delete` | Accepts one or more positive integer indexes or the keyword `all`. Duplicate indexes are rejected.                                                                                                                                                                                                                                                                                                                                           |
 | `mark` | Requires a positive integer index. The target candidate must exist in the current filtered list and must not already be marked as interviewed.                                                                                                                                                                                                                                                                                                  |
 | `unmark` | Requires a positive integer index. The target candidate must exist in the current filtered list and must already be marked as interviewed. The constructor also defensively rejects a null index.                                                                                                                                                                                                                                               |
 | `find` | Requires at least one keyword. Search is name-only and case-insensitive; fuzzy and partial-word matching are supported.                                                                                                                                                                                                                                                                                                                      |
 | `filter` | Requires exactly one `-interviewed` prefix with value `y`, `n`, `1`, or `0`. Unexpected preamble text and duplicate `-interviewed` prefixes are rejected.                                                                                                                                                                                                                                                                                    |
-| `remark` | Requires a positive integer index. The remark text is optional and may be empty to clear it. Remarks are limited to 120 characters and may contain only letters, digits, spaces, and the following symbols: . , ! ? ' " ( ) - / : @ # $ % & + * = [ ] and newlines. Remarks cannot start with another command prefix such as `-name` or `-tag`.                                                                                              |
+| `remark` | Requires a positive integer index. The remark text is optional and may be empty to clear it. Everything after `INDEX` is treated as remark text, and remarks are limited to 120 characters with the supported character set.                                                                                              |
 | `list`, `help`, `clear`, `exit` | No parameters are required. Extraneous arguments are ignored by design.                                                                                                                                                                                                                                                                                                                                                                      |
 
 ### Filter command hardening
@@ -219,7 +220,7 @@ the following steps occur:
 3. `RemarkCommandParser` extracts and validates:
     * the target `Index`
     * the raw remark string after the index, without requiring a prefix
-    * the remark string against the feature constraints
+   * the remark string against the feature constraints (including rejecting text that starts with command-like prefixes, to avoid ambiguity with CLI syntax)
 4. A `RemarkCommand` object is created
 5. During execution, `RemarkCommand`:
     * retrieves the target `Person` from the filtered list in the `Model`
@@ -326,7 +327,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. User requests to add a candidate with name, phone, and email.
+1. User requests to add a candidate with name, phone, email and address.
 2. RecruiterPlus validates the input parameters.
 3. RecruiterPlus checks that the candidate is not a duplicate by phone or email.
 4. RecruiterPlus saves the candidate details (with interviewed set to unmarked by default).
@@ -349,6 +350,7 @@ Use case ends.
       * Parameter -name specified more than once
       * Parameter -phone specified more than once
       * Parameter -email specified more than once
+      * Parameter -address specified more than once
 
    Use case ends.
 
